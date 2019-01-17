@@ -1,0 +1,116 @@
+@@include('./top.html')
+</head>
+
+<body>
+    @@include('./header.html',{ "pro": "act" }) @@include('./pbanner.html',{ "img": "pro_banner.jpg", "ch": "产品中心", "en": "Product Center" })
+    <div class="container">
+        <div class="pw pro-box page-pa">
+            <div class="proL">
+                @@include('./pronav.html',{
+                    "curr": "保温装饰一体板",
+                    "pro": "act"
+                })
+            </div>
+            <!-- proL -->
+            <div class="proR">
+                <div class="pro-tx clearfix">
+                    <div class="pic"><img src="img/pro_i1.jpg" alt=""></div>
+                    <div class="txts">
+                        <h2 class="pro-ti ti fwb">无机树脂板保温装饰板</h2>
+                        <div class="freeTx">
+                            <p>将纤维增强硅酸钙板或纤维增强水泥加压板用有机树脂，采用特殊的工艺对孔隙进行封闭处理，与保温材料复合后做成的保温装饰板。</p>
+                            <br>
+                            <p style="text-align: center;"><img src="img/pro_i2.jpg" alt=""></p>
+                        </div>
+                    </div>
+                </div>
+                <!-- pro-tx -->
+                <div class="pro-x">
+                    <div class="pro-sti">
+                        <p>构造性参数<span class="en">/CONSTRUCTIONAL PARAMETER</span></p>
+                    </div>
+                    <div class="freeTx">
+                        <p><img src="img/pro_i3.jpg" alt=""></p>
+                        <br>
+                        <p><img src="img/pro_i4.jpg" alt=""></p>
+                        <br>
+                        <p>◆面密度：12-22kg/m2 (保温层厚度30mm）<br> ◆规格尺寸（mm）:1220*2440 1220*1200 1220*800 1220*600 等（可按客户需求定制）<br> ◆抗拉强度：根据不同保温材料的强度而定
+                            <br> ◆阻燃等级：无机改性不燃保温板A级、B1级
+                            <br> ◆导热系数：符合保温材料的相关标准
+                            <br> ◆安装方式：1.粘贴+锚固 2.点式扣件干挂或龙骨干挂<br> ◆适用范围：多层、高层住宅小区、别墅及写字楼等民用建筑的外墙外保温节能装饰和旧建筑物墙面翻新改造
+                            <br> ◆环保性能：无毒无害、无辐射、无腐蚀、无污染、绿色环保建材。
+                            <br> ◆复合结构：多层夹心复合结构、双层复合结构
+                        </p>
+                        <br>
+                        <p><img src="img/pro_i5.jpg" alt=""></p>
+                    </div>
+                </div>
+                <!-- pro-x -->
+                <div class="pro-x">
+                    <div class="pro-sti">
+                        <p>产品优势<span class="en">/CONSTRUCTIONAL PARAMETER</span></p>
+                    </div>
+                    <div class="freeTx">
+                        <p class="adv">◆色彩丰富、装饰豪华</p>
+                        <p class="adv">◆保温节能、耐久美观</p>
+                        <p class="adv">◆施工快捷、安全可靠</p>
+                        <br>
+                        <p><img src="img/pro_i6.jpg" alt=""></p>
+                    </div>
+                </div>
+                <!-- pro-x -->
+                <div class="pro-x">
+                    <div class="pro-sti">
+                        <p>保温装饰一体化系统优势<span class="en">/CONSTRUCTIONAL PARAMETER</span></p>
+                    </div>
+                    <div class="freeTx">
+                        <p style="text-align: center;"><img src="img/pro_i7.jpg" alt=""></p>
+                        <p><img src="img/pro_i8.jpg" alt=""></p>
+                        <br>
+                        <p style="text-align: center;"><img src="img/pro_i9.jpg" alt=""></p>
+                    </div>
+                </div>
+                <!-- pro-x -->
+            </div>
+            <!-- proR -->
+        </div>
+    </div>
+    <!-- container -->
+    @@include('./footer.html')
+    <script src="js/page.js"></script>
+    <script>
+        $(function() {
+            $('.pro-nav').bind(_click, function(e) {
+                if (e.target.nodeName === 'A') {
+                    var $this = $(e.target),
+                        $next = $this.next();
+                    if (!$next.is('a')) {
+                        var $siblings = $this.parents('li').siblings(),
+                            _act = $this.hasClass('act');
+                        e.preventDefault();
+                        if (!_act) {
+                            $siblings.find('a').removeClass('act');
+                            $this.addClass('act');
+                            $siblings.find('.vt').stop(true, true).slideUp();
+                            $next.stop(true, true).slideDown();
+                        } else {
+                            $this.removeClass('act');
+                            $next.stop(true, true).slideUp();
+                        }
+                    }
+                }
+            });
+
+            $(window).scroll(function() {
+                if (isMobile) {
+                    return;
+                }
+                var st = $(window).scrollTop(),
+                    pt = $('.proL').offset().top - $('.header').height();
+                st > pt ? $('.pro-nav').addClass('fix') : $('.pro-nav').removeClass('fix');
+            });
+        })
+    </script>
+</body>
+
+</html>

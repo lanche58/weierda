@@ -1,0 +1,167 @@
+@@include('./top.html')
+</head>
+
+<body>
+    @@include('./header.html',{ "pro": "act" }) @@include('./pbanner.html',{ "img": "pro_banner.jpg", "ch": "产品中心", "en": "Product Center" })
+    <div class="container">
+        <div class="pw pro-box page-pa">
+            <div class="proL">
+                @@include('./pronav.html',{
+                    "curr": "辅助体系",
+                    "pro3": "act"
+                })
+            </div>
+            <!-- proL -->
+            <div class="proR">
+                <div class="auxi-tp">
+                    <div class="auxi-ti tac">
+                        <p class="ch fwb"><span>外墙保温装饰一体化系统安装专用材料</span></p>
+                        <p class="en ttu">SPECIAL MATERIAL FOR INSTALLATION</p>
+                    </div>
+                    <!-- auxi-ti -->
+                    <ul class="auxi-nav clearfix">
+                        <li><a href="pro3.html?#au1">粘结剂</a></li>
+                        <li><a href="pro3.html?#au2">锚固件</a></li>
+                        <li><a href="pro3.html?#au3">密封胶</a></li>
+                        <li><a href="pro3.html?#au4">排气塞</a></li>
+                    </ul>
+                    <!-- auxi-nav -->
+                </div>
+                <!-- auxi-tp -->
+                <div class="au1 aux" id="au1">
+                    <div class="pro-sti auxi-sti"><p>粘结剂</p></div>
+                    <div class="freeTx">
+                        <div class="pic"><img src="img/pro_i19.jpg" alt=""></div>
+                        <p> 聚合物改性无机粘结剂的材料组成：<br>
+                            ◆水泥（无机粘结剂）55% <br>
+                            ◆石英砂（骨料）40% <br>
+                            ◆改性剂： （聚合物胶粉+保水剂+偶联剂） 4-5% </p>
+                        <br>
+                        <p>我们经过千百次的试验结果：改性剂加入量低于4%，
+                                粘结剂收缩率增大，粘结强度将显著下降，它是系
+                                统安全的临界点。</p>
+                    </div>
+                    <p class="auxi-stx">粘结剂的质量是系统安全的保障</p>
+                </div>
+                <!-- au1 -->
+                <div class="au2 aux" id="au2">
+                    <div class="pro-sti auxi-sti"><p>密封胶</p></div>
+                    <div class="freeTx">
+                        <p>锚固件的三大功能：<br>
+                            1、装饰板初粘时定位校平，避免装饰板位移产生虚粘现象；<br>
+                            2、将装饰板的荷载均匀分散在墙体表面。<br>
+                            3、防止突然掉板（如抹灰层出现空鼓现象）；<br>
+                            </p>
+                    </div>
+                    <ul class="auxii-list clearfix">
+                        <li class="item1"><div class="ma scapic">
+                            <div class="pic"><img src="img/pro_i20.jpg" alt=""></div>
+                            <p class="ti">天然超薄石材保温装饰系统扣件参考图</p>
+                        </div></li>
+                        <li class="item2"><div class="ma scapic">
+                            <div class="pic"><img src="img/pro_i20.jpg" alt=""></div>
+                            <p class="ti">柔性轻质板、金属面板、无机树脂板保温装饰系统扣件参考图</p>
+                        </div></li>
+                    </ul>
+                    <!-- auxii-list -->
+                </div>
+                <!-- au2 -->
+                <div class="au3 aux" id="au3">
+                    <div class="pro-sti auxi-sti"><p>锚固件</p></div>
+                    <div class="freeTx">
+                        <p>密封胶的功能：<br>
+                            1、防水，抵消保温装饰板热胀冷缩产生的位移<br>
+                            2、分格装饰</p>
+                        <br>
+                        <p><img src="img/pro_i21.jpg" alt=""></p>
+                    </div>
+                </div>
+                <!-- au3 -->
+                <div class="au4 aux" id="au4">
+                    <div class="pro-sti auxi-sti"><p>排气塞</p></div>
+                    <div class="freeTx">
+                        <p>小发明解决大问题：<br>
+                            ◆有效排除墙体潮气，使室内达到湿度平衡<br>
+                            ◆排气塞使建筑墙体具有“自呼吸”功能</p>
+                    </div>
+                    <ul class="auxii-list clearfix">
+                        <li class="item1"><div class="ma scapic">
+                            <div class="pic"><img src="img/pro_i22.jpg" alt=""></div>
+                            <p class="ti">排气塞示意图</p>
+                        </div></li>
+                        <li class="item2"><div class="ma scapic">
+                            <div class="pic"><img src="img/pro_i22.jpg" alt=""></div>
+                            <p class="ti">潮气排放示意图</p>
+                        </div></li>
+                    </ul>
+                    <!-- auxii-list -->
+                </div>
+                <!-- au4 -->
+            </div>
+            <!-- proR -->
+        </div>
+    </div>
+    <!-- container -->
+    @@include('./footer.html')
+    <script src="js/page.js"></script>
+    <script>
+        $(function() {
+            $('.pro-nav').bind(_click, function(e) {
+                if (e.target.nodeName === 'A') {
+                    var $this = $(e.target),
+                        $next = $this.next();
+                    if (!$next.is('a')) {
+                        var $siblings = $this.parents('li').siblings(),
+                            _act = $this.hasClass('act');
+                        e.preventDefault();
+                        if (!_act) {
+                            $siblings.find('a').removeClass('act');
+                            $this.addClass('act');
+                            $siblings.find('.vt').stop(true, true).slideUp();
+                            $next.stop(true, true).slideDown();
+                        } else {
+                            $this.removeClass('act');
+                            $next.stop(true, true).slideUp();
+                        }
+                    }
+                }
+            });
+
+            $(window).scroll(function() {
+                if (isMobile) {
+                    return;
+                }
+                var st = $(window).scrollTop(),
+                    pt = $('.proL').offset().top - $('.header').height();
+                st > pt ? $('.pro-nav').addClass('fix') : $('.pro-nav').removeClass('fix');
+            });
+
+            $('.auxi-nav a, .pro-nav .anc').bind(_click, function(e) {
+                var hash = $(this).attr('href').split('#')[1];
+                if(hash){
+                    e.preventDefault();
+                    $('html,body').animate({scrollTop: $('#' + hash).offset().top - $mtoph}, 800);
+                }
+            });
+
+            $('.mtv .anc').bind(_click, function(e) {
+                var hash = $(this).attr('href').split('#')[1];
+                if(hash){
+                    e.preventDefault();
+                    var w = $menuBox.width();
+                    $('html').removeClass('open');
+                    $menuBtn.removeClass('active');
+                    $('.menuBlack').stop().fadeOut(600);
+                    $menuBox.stop(false,false).animate({right:-w+"px"},function(){
+                        $(this).hide();
+                    });
+                    navItem = 0;
+                    $('html,body').animate({scrollTop: $('#' + hash).offset().top - $mtoph}, 800);
+                }
+            });
+
+        })
+    </script>
+</body>
+
+</html>

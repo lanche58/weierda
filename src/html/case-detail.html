@@ -1,0 +1,78 @@
+@@include('./top.html')
+</head>
+<body>
+@@include('./header.html',{
+    "case": "act"
+})
+@@include('./pbanner.html',{
+    "img": "case_banner.jpg",
+    "ch": "工程案例",
+    "en": "Engineering case"
+})
+<div class="pnav">
+    <p class="mcv">精品案例<i class="sj sj-b"></i></p>
+    <ul class="pw fib">
+        <li class="ib"><a href="case.html" class="act">精品案例</a></li>
+        <li class="ib"><a href="case1.html">工程目录</a></li>
+    </ul>
+</div>
+<!-- pnav -->
+<div class="container">
+    <div class="nw2 pw2 page-pa">
+        <div class="nd-tx">
+            <div class="nd-pa">
+                <p class="ti tac fwb">陕西宝鸡-凤仪国际</p>
+                <div class="case-big-imgs u-slick">
+                    <div class="item"><div class="pic2"><img src="img/case_i4.jpg" alt=""></div></div>
+                    <div class="item"><div class="pic2"><img src="img/case_i4.jpg" alt=""></div></div>
+                    <div class="item"><div class="pic2"><img src="img/case_i4.jpg" alt=""></div></div>
+                    <div class="item"><div class="pic2"><img src="img/case_i4.jpg" alt=""></div></div>
+                    <div class="item"><div class="pic2"><img src="img/case_i4.jpg" alt=""></div></div>
+                </div>
+                <div class="case-small-imgs u-slick">
+                    <div class="item"><div class="pic"><img src="img/case_i5.jpg" alt=""></div></div>
+                    <div class="item"><div class="pic"><img src="img/case_i6.jpg" alt=""></div></div>
+                    <div class="item"><div class="pic"><img src="img/case_i7.jpg" alt=""></div></div>
+                    <div class="item"><div class="pic"><img src="img/case_i5.jpg" alt=""></div></div>
+                    <div class="item"><div class="pic"><img src="img/case_i6.jpg" alt=""></div></div>
+                </div>
+                <div class="freeTx">
+                    <p>为了进一步推动结构与保温装饰一体化板在建筑节能工程中的应用，2016年1月15日，由中国建筑节能协会建筑保温隔热专业委员会和中国建筑科学研究院建筑环境与节能研究院联袂主办的“结构与保温装饰一体化技术应用与行业发展论坛暨媒体见面会”活动，在中国建筑科学研究院近零能耗示范楼正式拉开帷幕，通过探讨交流保温装饰一体化板应用现状及行业未来发展方向，推动行业健康持续发展。</p>
+                </div>
+            </div>
+            <div class="nd-back nd-pa clearfix">
+                <a href="case.html" class="backList">返回列表</a>
+                <div class="b">
+                    <a href="#" class="nowti">上一篇文章：测试文字测试文字测试文字测试文字</a>
+                    <a href="#" class="nowti">下一篇文章：测试文字测试文字测试文字测试文字</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- nw2 -->
+</div>
+<!-- container -->
+@@include('./footer.html')
+<script src="js/page.js"></script>
+<script>
+    $(function(){
+        $('.case-big-imgs').slick({
+            arrows: false,
+            dots: true
+        });
+        $('.case-small-imgs .item').eq(0).find('.pic').addClass('act');
+        $('.case-small-imgs').slick({
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            infinite: false
+        });
+        $('.case-small-imgs .pic').bind(_click, function() {
+            var index = $(this).parent().index();
+            $('.case-small-imgs .pic').removeClass('act');
+            $(this).addClass('act');
+            $('.case-big-imgs').slick('slickGoTo', index);
+        });
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+@@include('./top.html')
+</head>
+
+<body>
+    @@include('./header.html',{ "pro": "act" }) @@include('./pbanner.html',{ "img": "pro_banner.jpg", "ch": "产品中心", "en": "Product Center" })
+    <div class="container">
+        <div class="pw pro-box page-pa">
+            <div class="proL">
+                @@include('./pronav.html',{
+                    "curr": "建筑涂料",
+                    "pro2": "act"
+                })
+            </div>
+            <!-- proL -->
+            <div class="proR">
+                <div class="pro-x tp">
+                    <h2 class="pro-ti ti fwb">丽彩石平面中涂漆</h2>
+                    <div class="freeTx">
+                        <p><img src="img/pro_i18.jpg" alt=""></p>
+                    </div>
+                </div>
+                <!-- pro-x -->
+                <div class="pro-x">
+                    <div class="pro-sti">
+                        <p>产品介绍<span class="en">/CONSTRUCTIONAL PARAMETER</span></p>
+                    </div>
+                    <div class="freeTx">
+                        <p style="text-indent: 30px;">丽彩石平面中涂漆是现彩石涂装平面效果配套的专用产品，是丽彩石花纹颜色不可分割的一部分，具有一定的弹性延伸率并创造平面的石材效果，花纹外观达到平面石材的装饰效果。</p>
+                    </div>
+                </div>
+                <!-- pro-x -->
+                <div class="pro-x">
+                    <div class="pro-sti">
+                        <p>技术参数<span class="en">/CONSTRUCTIONAL PARAMETER</span></p>
+                    </div>
+                    <div class="freeTx">
+                        <p>◆成分：硅丙树脂、钛白粉、特殊助剂和水；<br> ◆颜色：颜色按色卡或石材样板调制；
+                            <br> ◆耗漆量：理论值5-6kg/m2(实际耗漆量会施工工艺、要求的效果、基层表面粗糙度及施工环境而有差异)；
+                            <br> ◆干燥时间：表干2h，实干24h(25℃,湿度≤75%)；
+                            <br> ◆涂装方式：毛刷、辊筒、有气喷涂（建议）；
+                            <br> ◆稀释：使用清水稀释。稀释量约10-20%（不同环境条件下，按其吸收涂料的能力，在不同涂装遍数时稀释比例需做适当调整）；
+                            <br> ◆干膜厚度：30μm(每层)；
+                            <br> ◆施工条件：在5℃以上及相对湿度85%以下施工；
+                            <br> ◆清洗：所有工具用完后，应立即用水清洗干净；
+                            <br> ◆贮存：存放在阴凉(5~40℃)干燥处、密封保存可储存1年以上；
+                            <br> ◆包装规格：25kg(桶)
+                        </p>
+                    </div>
+                </div>
+                <!-- pro-x -->
+                <div class="pro-x">
+                    <div class="pro-sti">
+                        <p>产品特性<span class="en">/CONSTRUCTIONAL PARAMETER</span></p>
+                    </div>
+                    <div class="freeTx">
+                        <p>◆与威尔达丽彩石漆配套使用，创造出平面的石材效果◆<br> ◆有一定的延伸率，以弥盖墙体细微裂缝◆
+                            <br> ◆能长期防止霉菌和藻类的滋生◆
+                            <br> ◆产品附着力强，有良好的防水透气性◆
+                        </p>
+                    </div>
+                </div>
+                <!-- pro-x -->
+            </div>
+            <!-- proR -->
+        </div>
+    </div>
+    <!-- container -->
+    @@include('./footer.html')
+    <script src="js/page.js"></script>
+    <script>
+        $(function() {
+            $('.pro-nav').bind(_click, function(e) {
+                if (e.target.nodeName === 'A') {
+                    var $this = $(e.target),
+                        $next = $this.next();
+                    if (!$next.is('a')) {
+                        var $siblings = $this.parents('li').siblings(),
+                            _act = $this.hasClass('act');
+                        e.preventDefault();
+                        if (!_act) {
+                            $siblings.find('a').removeClass('act');
+                            $this.addClass('act');
+                            $siblings.find('.vt').stop(true, true).slideUp();
+                            $next.stop(true, true).slideDown();
+                        } else {
+                            $this.removeClass('act');
+                            $next.stop(true, true).slideUp();
+                        }
+                    }
+                }
+            });
+
+            $(window).scroll(function() {
+                if (isMobile) {
+                    return;
+                }
+                var st = $(window).scrollTop(),
+                    pt = $('.proL').offset().top - $('.header').height();
+                st > pt ? $('.pro-nav').addClass('fix') : $('.pro-nav').removeClass('fix');
+            });
+        })
+    </script>
+</body>
+
+</html>

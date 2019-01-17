@@ -1,0 +1,775 @@
+@charset "utf-8";
+@import "color";
+@import "repeat";
+.header { .t { height: 90px; }
+    .logo { float: left; width: 216px; margin-top: 24px; }
+    .h-tel { float: right; margin-top: 29px; }
+    .b { background: $fc2; height: 50px;
+        a { color: #fff; }
+    }
+    .nav { li { width: 11.11%; float: left; position: relative;
+            &:hover{
+                .seco-nav{ transform: none; @include show; }
+            }
+            +li:before { @include ba; left: 0; top: 0; bottom: 0; width: 1px; background: $hc4; }
+            >a { display: block; font-size: 16px; line-height: 50px; text-align: center;
+                &:hover,
+                &.act { background: $mc1; }
+            }
+        }
+    }
+    .seco-nav a{ color: $fc2; }
+}
+.seco-nav{
+    position: absolute; left: 0; right: 0; top: 100%; padding: 10px 0; background: #fff; box-shadow: 0 0 10px rgba(0,0,0,.1); transform: translateY(20px); @include hide; @include mt3;
+    a{ display: block; padding: 10px 5px; text-align: center; line-height: 1.4; 
+        &:hover{ color: $mc1; }
+    }
+}
+.h-tel { line-height: 32px; white-space: nowrap; color: $mc1;
+    i { @include di; }
+    .icon { margin: 0 10px; width: 28px; border: 2px solid $mc1; border-radius: 100%; font-size: 20px; text-align: center; line-height: 28px; }
+    .telNum { font-size: 22px; }
+}
+.banner { .pic2 { position: absolute; top: 0; left: 0; }
+    .txts { @include plr; top: 32%; color: #fff;
+        .ti { font-size: 50px; font-weight: bold; line-height: 1.3; }
+    }
+    .slick-dots { display: none !important; }
+}
+.mtop { height: 140px; }
+.ix1 { background: $hc3; padding: 100px 0; }
+.ix-ab { background: #fff;
+    .txts { float: left; padding: 50px 60px 0 45px; width: 50%; @include bs;
+        .tx { height: 72px; margin-bottom: 80px; }
+        .ia-ti { margin-bottom: 25px; }
+    }
+    .ia-video { width: 50%; float: right; }
+}
+.ia-ti { font-size: 26px; color: $fc1; }
+.ia-more { @include di; width: 136px; height: 36px; border: 1px solid $fc2; line-height: 36px; text-align: center; @include mt3;
+    .icon { @include di; margin-left: 10px; font-size: 24px; }
+}
+@media screen and (min-width:1025px) {
+    .ia-more:hover { background-color: $mc1; border-color: $mc1 !important; color: #fff; }
+}
+.ia-video { position: relative; background: $mc1; padding: 0 15px 15px 0; @include bs;
+    .pai { margin: -15px 0 0 -15px; padding-bottom: 63.33%; }
+}
+.video-btn { position: absolute; z-index: 9; top: 50%; left: 50%; margin: -25px 0 0 -25px; @include c(46px); border: 2px solid #fff; color: #fff;
+    .sj { margin: 13px 0 0 15px; border-top-width: 10px; border-bottom-width: 10px; border-left-width: 16px; }
+}
+.ix-pro { li { width: 25%; float: left;
+        >a { display: block; position: relative; color: #fff; }
+        &.act { .cover { background: $mc11; }
+            .txts { padding-top: 90px; transition-delay: 400ms;
+                .tx,
+                .more { @include show; transition-delay: 400ms; }
+            }
+        }
+    }
+    .cover { background: rgba(0, 0, 0, .5); @include mt4; }
+    .pic2 { height: 370px; @include bg; }
+    .txts { @include plr; top: 0; padding: 158px 35px 0 35px; @include mt4;
+        .tx { margin-top: 25px; height: 48px; }
+        .ia-more { border-color: #fff; }
+        .more { margin-top: 45px; }
+        .tx,
+        .more { @include hide; @include mt4; }
+    }
+}
+.ip-ti { .ch { font-size: 24px; }
+    .en { margin-top: 3px; font-size: 18px; }
+}
+.ix3 { padding: 85px 0 75px 0;
+    .in-ti { float: right; text-align: right; width: 200px; }
+}
+.in-ti { .ch { font-size: 18px; color: $fc1; }
+    .en { margin-top: 5px; }
+}
+.in-a { display: block; width: 780px; max-width: 100%; overflow: hidden;
+    .txts { overflow: hidden; }
+    .in-date { float: left; margin-right: 60px; }
+    .nowti { font-size: 18px; font-weight: bold; color: $fc1; }
+    .tx { margin-top: 20px; height: 48px; }
+    .more { margin-top: 20px; }
+}
+.in-date { position: relative; width: 90px; height: 110px; padding: 15px 0 0 10px; background: $mc1; font-size: 12px; line-height: 1; color: #fff; @include bs;
+    .m { margin-top: 20px; font-size: 26px; }
+    .y { position: absolute; left: 10px; bottom: 15px; font-size: 14px; }
+}
+.ix-news { margin-right: 200px; overflow: visible;
+    .slick-dots { left: 100%; right: auto; bottom: 0; width: 200px; text-align: right;
+        li { margin: 0 0 0 12px; border-radius: 0; width: 6px; height: 6px; background: $fc2; }
+        .slick-active { width: 54px; }
+    }
+}
+.footer { background: $fc1; padding: 25px 0 40px 0; color: #fff; font-size: 12px; line-height: 24px;
+    a { color: #fff; }
+    .f-ma { float: right; }
+    .f-cop,
+    .f-cont { float: left; margin-top: 10px; }
+}
+.f-ma { >img { float: left; width: 77px; margin-right: 10px; }
+    p { overflow: hidden; padding-top: 27px; }
+}
+.f-cont { p { float: left;
+        +p { margin-left: 40px; }
+    }
+    .icon { @include di; width: 25px; font-size: 18px; }
+}
+@media screen and (min-width:1025px) {
+    .footer a:hover { color: $mc1; }
+}
+.navMobile { padding-top: 60px;
+    a { display: block; padding-left: 60px; padding-right: 15px; line-height: 1.4; }
+    dd>a { padding-top: 15px; padding-bottom: 15px; font-size: 18px; color: $fc1;
+        &.act { background: $mc2; color: #fff; }
+    }
+    .mtv { background: $mc1; padding: 10px 0; display: none;
+        a { color: #fff; }
+        >a { padding-top: 8px; padding-bottom: 8px; font-size: 16px; }
+        .one { padding-left: 20px;
+            >a { padding-top: 4px; padding-bottom: 4px; opacity: .9; }
+        }
+        .two { padding-left: 20px;
+            >a { padding-top: 4px; padding-bottom: 4px; font-size: 12px; opacity: .6; }
+        }
+    }
+}
+.sos-box { text-align: center; padding: 110px 0 180px 0;
+    .tx1 { font-size: 16px; margin-top: 15px; }
+    img { vertical-align: bottom; max-width: 100%; }
+    .ib { width: 170px; height: 38px; background: $mc1; color: #fff; white-space: nowrap; line-height: 38px; }
+    .fib { margin-top: 45px; }
+}
+@media screen and (min-width:1025px) {
+    .sos-box .ib:hover { background-color: $mc2; }
+}
+.pbanner { color: #fff;
+    .txts { position: absolute; top: 0; bottom: 0; left: 5%; right: 5%; }
+    .ch { font-size: 26px; font-weight: bold; }
+    .en { margin-top: 2px; font-size: 12px; }
+    .tac .pba-arrow { margin: 50px auto 0 auto; }
+}
+.pba-arrow { border: 2px solid #fff; width: 26px; height: 26px; line-height: 26px; font-size: 14px; }
+// @keyframes arrowtop {
+    //  0% { transform: translateY(-50%); opacity: 1; }
+    //  100% { transform: translateY(50%); opacity: 0; }
+// }
+.pnav { border-bottom: 1px solid $hc1; line-height: 24px;
+    li { padding: 0 16px;
+        >a { display: block; position: relative; padding: 15px 8px;
+            &:before { @include hl($mc1, 4px); }
+            &.act { color: $mc1;
+                &:before { @include hlw; }
+            }
+        }
+    }
+}
+@media screen and (min-width:1025px) {
+    .pnav li>a:hover:before { @include hlw; }
+}
+.spec-news { display: block; position: relative; background: $mc1; color: #fff;
+    .pic { width: 50%; float: left; }
+    .txts { width: 50%; float: right; padding: 70px 50px 0 50px; @include bs; }
+    .nowti { font-size: 18px; font-weight: bold; }
+    .tx { margin-top: 20px; line-height: 20px !important; height: 60px; }
+    .more { position: absolute; right: 0; bottom: 70px; padding: 0 50px; width: 50%; @include bs; }
+}
+.nw-more { @include di; line-height: 18px; @include mt3;
+    .icon { @include di; margin-left: 10px; @include c(18px); background: #fff; font-size: 8px; color: $mc1; text-align: center; @include mt3; }
+}
+@media screen and (min-width:1025px) {
+    .nwm-h:hover .nw-more .icon { transform: rotate(90deg); }
+}
+.news-list { a { display: block; padding: 20px; border: 1px solid $hc1; overflow: hidden;
+        +a { margin-top: 35px; }
+    }
+    .pic { float: left; width: 220px; margin-right: 30px; }
+    .txts { overflow: hidden;
+        .w { width: 610px; max-width: 100%; }
+    }
+    .nw-date { float: right; margin-left: 30px; }
+    .nowti { margin-bottom: 20px; font-size: 16px; color: $fc1; }
+    .tx { margin-bottom: 45px; line-height: 20px !important; height: 40px; }
+    .nw-more .icon { background: $fc3; color: #fff; }
+}
+.nw-date { position: relative; background: $fc3; padding-top: 5px; width: 70px; height: 70px; line-height: 1; text-align: center; color: #fff; @include mt3;
+    .d { font-size: 30px;
+        i { display: none; }
+    }
+    .y { @include plr; bottom: 17px; }
+}
+@media screen and (min-width:1025px) {
+    .news-list a:hover { border-color: $mc1; }
+    .news-list a:hover .nw-date { background-color: $mc1; }
+    .news-list a:hover .nw-more { color: $mc1; }
+    .news-list a:hover .nw-more .icon { background: $mc1; }
+}
+.nw1 { .news-list { margin-top: 80px; }
+    .pager { margin-top: 80px; }
+}
+.pager { a { vertical-align: top; margin: 0 5px; width: 42px; height: 40px; border: 1px solid $hc1; font-size: 16px; line-height: 40px;
+        &.act { background: $mc1; border-color: $mc1; color: #fff; }
+    }
+    .arrow { width: 70px; font-size: 14px; }
+    .prev { margin-right: 10px; }
+    .next { margin-left: 10px; }
+}
+@media screen and (min-width:1025px) {
+    .pager a:hover { background: $mc1; border-color: $mc1; color: #fff; }
+}
+.page-pa { padding: 90px 0 100px 0; }
+.pw2 { width: 960px; margin: 0 auto; }
+.nd-pa { padding-left: 35px; padding-right: 35px; }
+.nd-tx { .ti { color: $fc1; font-size: 20px; }
+    .mes { margin-top: 5px; }
+    .freeTx { margin-top: 80px; }
+    .nd-back { margin-top: 140px; }
+}
+.backList { display: block; width: 110px; height: 36px; background: $mc1; color: #fff; white-space: nowrap; line-height: 36px; text-align: center; }
+.nd-back { border-top: 1px solid $hc1; padding-top: 25px;
+    .backList { float: right; margin-left: 40px; }
+    .b { overflow: hidden;
+        >a { display: block;
+            +a { margin-top: 10px; }
+        }
+    }
+}
+@media screen and (min-width:1025px) {
+    .nd-back .b>a:hover { color: $mc1; }
+    .backList:hover { background: $mc2; }
+}
+.nw3>div { @include bs; }
+.nwR { float: right; width: 35.8%; }
+.nwL { float: left; width: 64.2%; @include bs; padding-right: 40px; }
+.tec-infor { border: 1px solid $hc1; padding: 25px 0 35px 0;
+    .tec-ti { margin: 0 25px 25px 25px; }
+    .item { padding: 0 25px;
+        +.item { border-top: 1px dashed $hc1; padding-top: 35px; margin-top: 35px; }
+        >a { display: block; line-height: 30px; overflow: hidden; }
+        .more { float: right; width: 80px; text-align: right; }
+        .nowti { line-height: 30px; }
+    }
+}
+@media screen and (min-width:1025px) {
+    .tec-infor .item>a:hover { color: $mc1; }
+}
+.tec-ti { position: relative; font-size: 18px; color: $fc1;
+    &:before { @include ba; top: 50%; left: 0; right: 0; border-top: 1px dashed $hc1; }
+    span { position: relative; background: #fff; padding-right: 15px; }
+}
+.spec-indu { display: block; background: $mc1; color: #fff;
+    .pai { padding-bottom: 58.9%; }
+    .txts { width: 560px; padding: 25px 30px 20px 30px; max-width: 100%; @include bs; }
+    .nowti { margin-bottom: 20px; font-size: 18px; font-weight: bold; }
+    .tx { margin-bottom: 20px; line-height: 20px !important; height: 60px; }
+}
+.indu-list { a { display: block; overflow: hidden; line-height: 40px; }
+    .nowti { position: relative; line-height: 40px; padding-left: 30px; }
+    .date { float: right; width: 90px; text-align: right; }
+    .sj { display: block; position: absolute; top: 50%; left: 10px; margin-top: -4px; }
+}
+@media screen and (min-width:1025px) {
+    .indu-list a:hover { color: $mc1; }
+}
+.nw3 .indu-list { margin-top: 40px; }
+.nw3 .pager { margin-top: 80px; }
+.case-nav { a { position: relative; margin: 0 6px; width: 140px; height: 48px; border: 1px solid $hc1; @include bs; font-size: 16px; line-height: 48px; white-space: nowrap;
+        &.act { background: $mc1; border-color: $mc1; color: #fff;
+            .sj { display: block; }
+        }
+    }
+    .sj { position: absolute; left: 50%; top: 100%; margin-left: -4px; border-top-width: 6px; color: $mc1; display: none; }
+}
+@media screen and (min-width:1025px) {
+    .case-nav a:hover { background: $mc1; border-color: $mc1; color: #fff; }
+}
+.case-list { margin-left: -50px;
+    li { width: 33.33%; float: left; margin-bottom: 55px; }
+    a { display: block; position: relative; margin-left: 50px; background: $hc3; overflow: hidden;
+        &:after { @include ba; @include tblr; border: 3px solid $mc1; @include hide; @include mt4; }
+    }
+    .pai { padding-bottom: 64.86%; }
+    .nowti { height: 66px; padding: 0 5%; border-bottom: 2px solid $fc3; line-height: 66px; text-align: center; }
+    .cover { background: $mc11; @include hide; @include mt4; }
+}
+.case-plus { position: absolute; top: 50%; left: 50%; margin: -1px 0 0 -15px; width: 30px; height: 2px; background: #fff; transform: translateY(-20px); @include hide; @include mt4;
+    &:before { @include ba; left: 14px; top: -14px; width: 2px; height: 30px; background: #fff; }
+}
+@media screen and (min-width:1025px) {
+    .case-list a:hover .cover,
+    .case-list a:hover:after { @include show; }
+    .case-list a:hover { background: $mc1; color: #fff; }
+    .case-list a:hover .case-plus { transform: none; @include show; }
+}
+.case1 { .case-nav { margin-bottom: 80px; }
+    .case-list { margin-bottom: 25px; }
+}
+.case-big-imgs .slick-dots { display: none !important; }
+.case-small-imgs { padding: 25px 200px; background: $hc3;
+    .pic { margin: 0 4px; cursor: pointer;
+        &:after,
+        &:before { @include ba; @include tblr; @include hide; @include mt4; }
+        &:before { background: $mc11; }
+        &:after { border: 2px solid $mc1; }
+        &.act { &:after,
+            &:before { @include show; }
+        }
+    }
+    .slick-arrow { width: auto; background: none; font-weight: bold; font-size: 20px; color: $fc2; }
+    .slick-prev { left: 170px; }
+    .slick-next { right: 170px; }
+    .slick-disabled { color: $fc3 !important; cursor: default; }
+}
+@media screen and (min-width:1025px) {
+    .case-small-imgs .slick-arrow:hover { color: $mc1; }
+}
+.nw2 .case-big-imgs { margin-top: 40px; }
+.case-table { table { width: 100%; text-align: center;
+        th,
+        td { padding-left: 15px; padding-right: 15px; border: 1px solid $hc1; }
+        td { padding-top: 28px; padding-bottom: 28px; }
+        th { padding-top: 12px; padding-bottom: 12px; background: $mc3; font-weight: normal; color: $fc1; }
+    }
+    a { color: $mc1; }
+}
+.jb1 { .freeTx { width: 1000px; max-width: 100%;
+        a { color: $mc4; text-decoration: underline; }
+    }
+    .job-list { margin-top: 80px; }
+}
+@media screen and (min-width:1025px) {
+    .jb1 .freeTx a:hover { color: $mc1; }
+}
+.job-list { border-top: 3px solid $hc1;
+    li { border-bottom: 3px solid $hc1;
+        &.act { .t { background: $mc1; color: #fff;
+                &:before,
+                &:after { background: #fff; }
+                &:after { transform: rotate(90deg); }
+            }
+        }
+    }
+    .b { padding: 30px 20px 60px 20px; background: $hc3; display: none; }
+    .t { position: relative; padding: 0 20px; cursor: pointer; color: $fc1; @include mt3;
+        &:before,
+        &:after { @include ba; background: $fc2; @include mt3; }
+        &:before { top: 50%; right: 50px; margin-top: -2px; width: 16px; height: 4px; }
+        &:after { top: 50%; right: 56px; margin-top: -8px; width: 4px; height: 16px; }
+    }
+    .nowti { margin-right: 100px; font-size: 16px; line-height: 72px; }
+}
+@media screen and (min-width:1025px) {
+    .job-list li:hover .t { background: $mc1; color: #fff; }
+    .job-list li:hover .t:before,
+    .job-list li:hover .t:after { background: #fff; }
+}
+#map { height: 550px; background: $mc1; }
+.map-nav { background: $hc3; line-height: 74px; font-size: 16px; color: $fc1;
+    li { width: 50%; float: left; white-space: nowrap; text-align: center; cursor: pointer;
+        >p { display: inline-block; vertical-align: middle; line-height: 34px; @include mt3; }
+        &.act { background: $mc1; color: #fff;
+            .icon { background: #fff; color: $mc1; }
+        }
+    }
+    .icon { @include c(34px); margin-left: 20px; background: $fc1; font-size: 12px; color: #fff; }
+}
+@media screen and (min-width:1025px) {
+    .map-nav li:not(.act):hover p { color: $mc1; }
+    .map-nav li:not(.act):hover .icon { background: $mc1; color: #fff; }
+}
+.pbg { background: $hc3; }
+.cta1 { background: #fff; padding: 10px 0 40px 0;
+    // .cta-list { float: right; width: 72%; padding-top: 15px; }
+}
+// .cta-ma { float: left; width: 28%;
+//     .b { width: 150px; margin-left: 90px; text-align: center; }
+//     .pic2 { margin-bottom: 5px; border: 1px solid $hc1; }
+// }
+.cta-list { 
+    overflow: hidden; position: relative;
+    &:after, &:before{ @include ba; }
+    &:before{ top: 65px; bottom: 65px; left: 50%; border-left: 1px solid $hc1; }
+    &:after{ left: 0; right: 0; top: 50%; border-top: 1px solid $hc1; }
+    li { width: 50%; float: left; line-height: 30px; }
+    .ti { margin-bottom: 15px; font-size: 18px; color: $fc1; }
+    .icon { @include di; width: 30px; font-size: 18px; }
+    .ma{ height: 195px; padding: 65px 60px 0; overflow: hidden; }
+}
+@media screen and (min-width:1025px) {
+    .cta-list a:not(.na):hover { color: $mc1; }
+}
+.cta-ti { text-transform: uppercase; font-size: 38px; color: $mc1; }
+.fill-in-mess { padding: 0 90px;
+    li+li { margin-top: 2%; }
+    .clearfix { .s-input { float: left; width: 32%;
+            +.s-input { margin-left: 2%; }
+        }
+    }
+    .subBtn,
+    .s-input { height: 40px; @include mt3; }
+    .s-input { padding-left: 20px; background: #fff; @include bs;
+        &:focus { background: $mc1; color: #fff; }
+    }
+    .s-textarea,
+    .subBtn { width: 100%; }
+    .s-textarea { padding-top: 10px; height: 150px; }
+    .subBtn { background: $mc1; color: #fff; }
+}
+@media screen and (min-width:1025px) {
+    .fill-in-mess .subBtn:hover { background: $fc2; }
+}
+.cta2 { padding: 75px 0 95px 0;
+    .freeTx { width: 780px; max-width: 100%; margin: 75px auto 0 auto; }
+    .cta-ti { margin-bottom: 40px; }
+}
+.ser-ti { position: relative;
+    &.white { color: #fff;
+        .ch { color: #fff; }
+    }
+    .pai { padding-bottom: 55%; }
+    .txts { @include plr; bottom: 0; padding: 30px 5%; @include b5; }
+    .ch { font-size: 30px; color: $mc1; }
+    .en { margin-top: 2px; font-size: 18px; }
+    .en-l { line-height: 1.4; position: relative; margin-top: 5px;
+        &:before { @include ba; left: 0; right: 0; top: 50%; border-top: 1px solid $hc1; }
+        span { @include di; position: relative; background: #fff; padding: 0 15px; }
+    }
+    &.black { .ch { color: $fc2; }
+    }
+}
+.ser-tx { padding: 65px 50px 70px 50px;
+    .ser-ti { margin-bottom: 50px;
+        .en { margin-top: 10px; line-height: 1.6; }
+    }
+}
+.prom-list { margin-left: -15px;
+    li { float: left; width: 25%; margin-bottom: 15px;
+        &:nth-child(4) .ma { background: $mc5; }
+        &:nth-child(5) .ma { background: $mc6; }
+        &:nth-child(7) .ma { background: $mc7; }
+    }
+    .ma { margin-left: 15px; height: 219px; background: $mc1; color: #fff; overflow: hidden; }
+    .nowti,
+    .tx { text-align: center; }
+    .nowti { height: 50px; margin-bottom: 20px; border-bottom: 1px solid #fff; font-size: 18px; line-height: 50px; }
+    .tx { line-height: 20px !important; }
+    .tx1 { max-height: 80px; }
+}
+.prom-tx { padding-top: 90px;
+    .prom-list { margin-top: 60px; }
+}
+.tech-list { li { overflow: hidden; background: $hc3; padding: 25px 35px 25px 25px;
+        +li { margin-top: 20px; }
+    }
+    .pic { float: left; width: 215px; margin-right: 35px; }
+    .txts { overflow: hidden; padding: 20px 0; }
+    .ti { margin-bottom: 15px; font-size: 24px; }
+}
+.wall-list { li { overflow: hidden; height: 209px;
+        +li { margin-top: 10px; }
+        &:nth-child(2n) .ma { background: $mc5; }
+        &:nth-child(3n) .ma { background: $mc2; }
+        &:nth-child(4n) .ma { background: $mc7; }
+        &:nth-child(5n) .ma { background: $fc2; }
+    }
+    .pic { float: left; width: 64.1%; }
+    .txts { float: right; width: 35.9%; height: 100%; }
+    .ma { margin-left: 10px; padding: 20px 30px 0 30px; @include bs; background: $mc1; color: #fff; height: 100%; }
+    .ti { margin-bottom: 15px; font-size: 20px; }
+    .freeTx { height: 120px; }
+}
+.wa-ti { font-size: 24px; line-height: 1.4; color: $mc1; }
+.wall-tx { margin-top: 25px;
+    .wa-ti { margin-bottom: 30px; }
+    .freeTx { +.freeTx { padding-top: 75px; }
+        &.pbg { margin-top: 25px; padding-left: 50px; padding-right: 50px; padding-bottom: 90px; }
+    }
+}
+.chara-tx { padding: 35px 0 135px 0; background-position: center top; background-repeat: no-repeat; }
+.chara-list { li { position: relative; @include c(170px); margin: 0 40px; background: $mc1; color: #fff;
+        +li:before { @include ba; top: 50%; right: 100%; margin-top: -9px; width: 80px; height: 17px; background: url("../images/aw1.png") no-repeat center top; }
+        &:nth-child(2n) { background: $mc5; }
+        &:nth-child(3n) { background: $mc2; }
+        &:nth-child(4n) { background: $mc7; }
+    }
+    .ti { padding-top: 70px; font-size: 20px; line-height: 30px; }
+}
+.pro-list { margin-left: -10px;
+    li { width: 25%; float: left;
+        &:nth-child(2n) .ma { background: $mc5; }
+        &:nth-child(3n) .ma { background: $mc2; }
+        &:nth-child(4n) .ma { background: $mc7; }
+    }
+    .ma { margin-left: 10px; background: $mc1; color: #fff; }
+    .txts { height: 305px; padding: 0 10px; overflow: hidden; }
+    .ti { margin-top: 55px; font-size: 18px; font-weight: bold; }
+    .tx { margin-top: 30px; }
+    .pai { padding-bottom: 103.39%; }
+}
+.pro-adva-box { padding: 65px 50px 0 50px; margin-top: 80px;
+    .pic2 { width: 245px; margin-right: 15px; float: left; }
+    >.freeTx { margin-bottom: 75px; }
+    &.ser-pa { padding-bottom: 70px; margin-top: 20px; }
+}
+.pro-adva-list { overflow: hidden;
+    li { border-left: 2px solid $hc1; padding: 35px 0 25px 45px;
+        &:last-child { padding-bottom: 80px; }
+    }
+    .ti { position: relative; margin-bottom: 15px; font-size: 18px; font-weight: bold; }
+    .sj { display: block; position: absolute; top: 50%; right: 100%; margin: -5px 36px 0 0; border-left-width: 9px; border-top-width: 5px; border-bottom-width: 5px; }
+}
+.afsale-list { margin-left: -100px; position: relative;
+    li { width: 50%; float: left; }
+    .ma { margin-left: 100px; }
+    img { vertical-align: bottom; max-width: 100%; }
+    .tx1 { margin-top: 10px; background: $hc3; padding: 21px 5%; font-size: 26px; }
+    .tx2 { margin-top: 10px; color: $fc3; }
+    .txts { padding-top: 30px; }
+    .c { position: absolute; left: 50%; top: 0; margin-left: -30px; width: 160px; }
+}
+.sale-list { li { overflow: hidden;
+        +li { margin-top: 55px; }
+    }
+    .picbox { float: left; width: 435px; margin-right: 40px; }
+    .pai { padding-bottom: 56.32%; }
+    .txts { overflow: hidden; }
+    .ti { position: relative; margin-bottom: 20px; font-size: 18px; font-weight: bold;
+        &:before { @include ba; top: 50%; left: 0; right: 0; border-top: 1px solid $hc1; }
+        span { @include di; background: $hc3; position: relative; padding-right: 15px; }
+    }
+}
+.his-tx { position: relative;
+    .txts { position: relative; width: 900px; max-width: 100%; padding: 55px 60px 125px 60px; background: $mc1; @include bs; color: #fff; }
+    .ser-ti { margin-bottom: 20px; }
+    .picbox { position: absolute; top: 0; bottom: 0; right: 0; width: 50%; }
+    .pic2 { margin-left: 300px; height: 100%; @include bg; }
+}
+.his-box { margin-top: 70px;
+    .his-list { position: relative; margin: 0 8.33%; padding: 100px 0 55px 0;
+        &:before { @include ba; left: 50%; top: 0; bottom: 0; border-left: 1px solid $hc1; }
+    }
+    .txts { width: 50%; position: relative; }
+    .item1 { .txts { float: right; }
+        .freeTx { margin-left: 35px; }
+        .date { left: 35px; }
+        .dot { right: 100%; margin-right: 28px;
+            &:after { left: 100%; margin-left: 1px; width: 28px; }
+        }
+    }
+    .item2 { .freeTx { margin-right: 35px; }
+        .date { right: 35px; }
+        .dot { left: 100%; margin-left: 29px;
+            &:after { right: 100%; margin-right: 1px; width: 29px; }
+        }
+    }
+    .freeTx { border-radius: 10px; padding: 25px 25px 35px 25px; background: $hc2; }
+    .date { position: absolute; bottom: 100%; margin-bottom: 8px; width: 110px; height: 28px; border-radius: 10px; background: $mc1; line-height: 28px; font-size: 18px; text-align: center; white-space: nowrap; color: #fff; }
+    .dot { display: block; position: absolute; top: 7px; border: 1px solid $mc1; border-radius: 5px; width: 11px; height: 11px; background: #fff;
+        &:before { @include ba; top: 1px; left: 1px; border-radius: 4px; width: 9px; height: 9px; background: $mc1; }
+        &:after { @include ba; top: 5px; height: 1px; background: $hc1; }
+    }
+}
+.his-dot { height: 33px; background: url("../images/aw2.png") no-repeat center top; }
+.honorx-list { line-height: 24px;
+    a,
+    .t { overflow: hidden; }
+    a { display: block; cursor: default; background: $hc2;
+        &:nth-child(2n-1) { background: $hc1; }
+    }
+    .l { width: 77.5%;
+        p { padding: 23px 65px; border-right: 1px solid #fff; }
+    }
+    .r { width: 22.5%;
+        p { padding: 23px 55px; }
+    }
+    .t { background: $mc1; color: #fff; font-size: 18px; }
+}
+@media screen and (min-width:1025px) {
+    .honorx-list a:hover{ background: $fc3; } 
+}
+.honori-list { margin-left: -30px;
+    a { width: 33.33%; float: left; margin-bottom: 30px; }
+    .pai { margin-left: 30px; padding-bottom: 62.83%;
+        &:after { @include ba; @include tblr; border: 4px solid $mc1; @include hide; @include mt4; }
+    }
+    figure { display: none; }
+}
+@media screen and (min-width:1025px) {
+    .honori-list a:hover .pai:after { @include show; }
+}
+.ab1 { .honori-list,
+    .honor-tx { margin-top: 55px; }
+    .res-list { margin-bottom: 70px; }
+    .ab-adva-list { margin-top: 25px; }
+    .ab-link-list { margin-top: 85px; }
+    .indu-list { margin-bottom: 35px; }
+    .indu-tx { margin-bottom: 40px; }
+}
+.res-list { margin-left: -30px;
+    li { width: 20%; float: left;
+        &:nth-child(2n) .ma { background: $mc5; }
+        &:nth-child(3n) .ma { background: $mc2; }
+        &:nth-child(4n) .ma { background: $mc7; }
+        &:nth-child(5n) .ma { background: $fc2; }
+    }
+    .ma { margin-left: 30px; background: $mc1; color: #fff; }
+    .txts { padding: 0 10px; height: 205px; overflow: hidden; }
+    .ico { height: 74px; margin-top: 75px; }
+    .ti { margin-top: 10px; text-align: center; font-size: 18px; }
+    .pai { padding-bottom: 127.91%; }
+}
+.res-ti { background: $hc2; padding: 20px 30px; line-height: 1.4; font-size: 20px; font-weight: bold;
+    >p { display: inline-block; vertical-align: middle; }
+    .sj-r { margin-left: 20px; border-top-width: 5px; border-bottom-width: 5px; border-left-width: 12px; }
+}
+.res-tx { padding-bottom: 60px;
+    .indu-ti,
+    .res-ti { margin-bottom: 30px; }
+}
+.ab-adva-list { li { overflow: hidden; padding: 20px 35px 20px 20px; border: 1px solid $hc1;
+        +li { margin-top: 30px; }
+    }
+    .pic { float: left; width: 255px; height: 165px; margin-right: 35px; }
+    .txts { overflow: hidden; }
+    .ti { margin-bottom: 15px; font-weight: bold; font-size: 20px; color: $mc1; }
+}
+.indu-ti { padding: 25px 5%; font-size: 28px; background: $hc2; }
+.indu-list { margin-left: -50px;
+    li { width: 33.33%; float: left; margin-bottom: 50px; }
+    .ma { margin-left: 50px; }
+    .pai { padding-bottom: 101.35%; }
+    .txts { overflow: hidden; height: 115px; font-size: 16px; line-height: 1.6; text-align: center; }
+    .year { width: 124px; max-width: 100%; height: 30px; margin: 25px auto 10px auto; border-radius: 10px; background: $mc1; color: #fff; line-height: 30px; white-space: nowrap; }
+}
+.ab-link-box { .ser-ti .en { font-size: 20px; margin: 0; }
+}
+.ab-link-list { margin-left: -30px;
+    li { float: left; width: 20%; margin-bottom: 30px; }
+    .pai { margin-left: 30px; border: 1px solid $hc2; padding-bottom: 45.45%; background: $hc2; }
+}
+.ab-intro { .pic2 { width: 374px; margin-right: 75px; float: left; }
+}
+.ab3 { background: $mc1; color: #fff;
+    .pw { background-position: left bottom; background-repeat: no-repeat; }
+    .pic { width: 715px; height: 485px; margin-left: 70px; float: right; }
+    .txts { padding: 75px 0 0 70px; overflow: hidden; font-size: 20px; line-height: 1.5; }
+}
+.ab4 { position: relative; background-position: center bottom; background-repeat: no-repeat;
+    .pw>.freeTx { padding-top: 100px; }
+}
+.idea-box { float: left; width: 486px; margin-right: 40px; background: $hc2;
+    .idea-ti { background: $mc1; padding: 30px 5%; color: #fff; }
+}
+.idea-list { padding: 100px 45px;
+    li { overflow: hidden;
+        +li { margin-top: 40px; }
+    }
+    .ico { width: 55px; height: 35px; background-position: left top; float: left; }
+    .txts { overflow: hidden; }
+    .ti { margin-bottom: 5px; font-weight: bold; font-size: 16px; }
+}
+.idea-ti { font-size: 20px;
+    .en { margin-top: 2px; }
+}
+.pro-box { overflow: hidden; }
+.proL { float: left; width: 220px; min-height: 10px; margin-right: 85px; 
+    .pnav{ display: none; }
+}
+.proR { overflow: hidden; min-height: 1000px; }
+.pro-nav { width: 220px;
+    &.fix { position: fixed; z-index: 299; left: 50%; top: 140px; margin-left: -600px; @include bs; padding-bottom: 140px; max-height: 100%; @include sy;
+        &::-webkit-scrollbar { width: 6px; background: $hc1; }
+        &::-webkit-scrollbar-thumb { background: $mc1; }
+    }
+    a { display: block; line-height: 1.4; }
+    li { background: #fff;
+        +li { margin-top: 3px; }
+    }
+    li>a { position: relative; background: $mc1; padding: 11px 0 11px 20px; font-size: 16px; font-weight: bold; color: #fff;
+        .sj { display: block; position: absolute; top: 50%; margin-top: -3px; right: 15px; border-left-width: 5px; border-right-width: 5px; border-top-width: 6px; }
+    }
+    .one { display: none; padding: 15px 0; background: $hc2;
+        >a { padding: 12px 0 12px 20px; color: $fc1;
+            &.act { background: $hc1; color: $fc1; }
+        }
+    }
+    .two { padding: 10px 0 10px 30px; display: none;
+        >a { position: relative; border-left: 2px solid $fc3; padding: 7px 0 7px 20px; color: $fc3;
+            .sj { display: block; position: absolute; top: 50%; left: 0; margin-top: -5px; border-top-width: 5px; border-bottom-width: 5px; border-left-width: 6px; transform: translateX(150%); @include hide; @include mt3; }
+        }
+    }
+}
+@media screen and (min-width:1025px) {
+    .pro-nav .one>a:hover { background: $hc1; color: $fc1; }
+    .pro-nav .two>a:hover { color: $fc1; }
+    .pro-nav .two>a:hover .sj { transform: none; @include show; }
+}
+.pro-tx { background: #ececec;
+    .pic { width: 50%; float: left; }
+    .txts { width: 50%; float: right; padding: 25px 30px 0 30px; @include bs; }
+    .pro-ti { margin-bottom: 40px; }
+}
+.pro-ti { position: relative; padding-bottom: 15px; color: $mc1; font-size: 20px;
+    &:before { @include ba; left: 0; bottom: 0; background: $mc1; width: 40px; height: 3px; }
+}
+.pro-sti { position: relative; font-size: 20px; line-height: 24px; font-weight: bold; color: $fc1;
+    &:before { @include ba; top: 50%; left: 0; right: 0; border-top: 1px solid $hc1; }
+    >p { position: relative; @include di; background: #fff; padding-right: 20px; }
+    .en { margin-left: 10px; @include di; font-size: 14px; text-transform: uppercase; color: $hc1; font-weight: normal; line-height: 24px; }
+}
+.pro-x { padding-top: 70px;
+    &.tp { padding-top: 0; }
+    .pro-ti,
+    .pro-sti { margin-bottom: 40px; }
+    .adv { background: $hc2; padding: 10px 20px; font-size: 16px; color: $fc1;
+        +.adv { margin-top: 5px; }
+    }
+    .advx { padding: 15px 20px 30px 20px;
+        &:last-child { padding-bottom: 0; }
+    }
+}
+.auxi-tp{
+    background: $mc1; padding: 70px 0 100px 0; color: #fff;
+    a{ color: #fff; }
+    .auxi-nav{ margin-top: 110px; }
+}
+.auxi-ti{
+    .ch{ position: relative; font-size: 24px; 
+        span{ position: relative; @include di; padding: 0 25px; background: $mc1; }
+        &:before{ @include ba; left: 0; right: 0; top: 50%; border-top: 1px solid #fff; }
+    }
+    .en{ margin-top: 10px; }
+}
+.auxi-nav{
+    padding: 0 50px; margin-left: -50px;
+    li{ width: 25%; float: left; }
+    a{ display: block; margin-left: 50px; border: 1px solid #fff; border-radius: 10px; font-size: 16px; text-align: center; white-space: nowrap; line-height: 38px; }
+}
+@media screen and (min-width:1025px) {
+    .auxi-nav a:hover{ background: #fff; color: $mc1; }
+}
+.auxi-sti{
+    p:before{ @include ba; right: 0; top: 50%; margin-top: -2px; width: 5px; height: 5px; background: $hc1; }
+}
+.au1{
+    .freeTx{
+        .pic{ float: right; width: 59%; margin-left: 40px; }
+    }
+}
+.aux{
+    padding-top: 70px;
+    .auxi-sti{ margin-bottom: 40px; }
+    .auxi-stx{ margin-top: 50px; }
+    .auxii-list{ margin-top: 30px; }
+}
+.auxi-stx{ background: $hc2; padding: 25px 5%; line-height: 1.4; text-align: center; font-size: 24px; color: $fc1; }
+.auxii-list{
+    margin-left: -20px;
+    li{ width: 50%; float: left; }
+    .ma{ margin-left: 20px; }
+    .ti{ text-align: center; margin-top: 20px; }
+    .item1{ clear: both; }
+}

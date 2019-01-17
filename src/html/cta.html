@@ -1,0 +1,124 @@
+@@include('./top.html')
+</head>
+<body>
+@@include('./header.html',{
+    "cta": "act"
+})
+<div id="map"></div>
+<ul class="map-nav clearfix">
+    <li data-point="104.018887,30.723201" data-message="<p>地址：四川省绵阳市游仙区游仙东路89号</p><p>邮编：621000</p>"><p>总部-西部营销中心地图</p><p class="icon iconfont icon-jiantou-copy-copy"></p></li>
+    <li data-point="104.018887,30.723201" data-message="<p>地址：四川省绵阳市游仙区游仙东路89号</p><p>邮编：621000</p>"><p>东部营销中心地图</p><p class="icon iconfont icon-jiantou-copy-copy"></p></li>
+</ul>
+<div class="container pbg">
+    <div class="cta1">
+        <div class="pw">
+            <!-- <div class="cta-ma">
+                <div class="b">
+                    <div class="pic2"><img src="img/ma3.jpg" alt=""></div>
+                    <p>微信公众二维码</p>
+                </div>
+            </div> -->
+            <ul class="cta-list">
+                <li>
+                    <div class="ma">
+                        <p class="ti">西南营销中心（总部）</p>
+                        <p><a href="#" class="na"><i class="icon iconfont icon-dianhua"></i>电话：028-87797212</a></p>
+                        <p><i class="icon iconfont icon-dayinchuanzhen"></i>传真：028-87734176</p>
+                        <p><a href="#"><i class="icon iconfont icon-ditu-dibiao"></i>地址：四川省成都市金牛区金科南路38号9栋D座</a></p>
+                    </div>
+                </li>
+                <li>
+                    <div class="ma">
+                        <p class="ti">华东营销中心</p>
+                        <p><a href="#" class="na"><i class="icon iconfont icon-dianhua"></i>电话：021-64603099</a></p>
+                        <p><i class="icon iconfont icon-dayinchuanzhen"></i>传真：021-64603964</p>
+                        <p><a href="#"><i class="icon iconfont icon-ditu-dibiao"></i>地址：上海是闵行区申南路59弄泰弘大厦1号楼607室</a></p>
+                    </div>
+                </li>
+                <li>
+                    <div class="ma">
+                        <p class="ti">华中营销中心</p>
+                        <p><a href="#" class="na"><i class="icon iconfont icon-dianhua"></i>电话：027-83929639</a></p>
+                        <p><i class="icon iconfont icon-dayinchuanzhen"></i>传真：027-83929639</p>
+                        <p><a href="#"><i class="icon iconfont icon-ditu-dibiao"></i>地址：武汉市江岸区金桥大道81号百步亭金桥汇A栋1619室</a></p>
+                    </div>
+                </li>
+                <li>
+                    <div class="ma">
+                        <p class="ti">华北（东北）营销中心</p>
+                        <p><a href="#" class="na"><i class="icon iconfont icon-dianhua"></i>电话：010-67155176</a></p>
+                        <p><i class="icon iconfont icon-dayinchuanzhen"></i>传真：010-67155176</p>
+                        <p><a href="#"><i class="icon iconfont icon-ditu-dibiao"></i>地址：北京市东城区光明路乙12号（京城百工坊）402</a></p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- cta1 -->
+    <div class="cta2 pw">
+        <p class="cta-ti ti tac fwb">Message</p>
+        <form>
+            <ul class="fill-in-mess">
+                <li class="clearfix">
+                    <input type="text" class="s-input" value="NAME:" />
+                    <input type="text" class="s-input" value="TEL:" />
+                    <input type="text" class="s-input" value="ADDRESS:" />
+                </li>
+                <li><textarea class="s-input s-textarea">CONTENT:</textarea></li>
+                <li><input type="submit" value="确认提交" class="subBtn" /></li>
+            </ul>
+        </form>
+        <div class="freeTx tac">
+            Welcome to visit the official website of weierda!<br>If you have any questions or suggestions, please contact us by the following way or call 400-8888-888 or you can submit online consultation form, we will contact you as soon as possible.
+        </div>
+    </div>
+    <!-- cta2 -->
+</div>
+<!-- container -->
+@@include('./footer.html')
+<script src="js/page.js"></script>
+<script src="http://api.map.baidu.com/api?v=2.0&ak=7d3a4c6e5e8a70dd200a2eeacf8c1b50"></script>
+<script>
+    $(function(){
+        function ShowMap(zuobiao, showmapInfo, zoom) {
+            var arrzuobiao = zuobiao.split(',');
+             var map = new BMap.Map("map");
+            var point = new BMap.Point(arrzuobiao[0], arrzuobiao[1]);
+            var marker = new BMap.Marker(point, {
+                icon: new BMap.Icon("images/mapi.png", new BMap.Size(84, 93))
+            })
+            map.addOverlay(marker);
+            marker.setAnimation(BMAP_ANIMATION_BOUNCE);
+            map.centerAndZoom(point, zoom);
+            map.disableScrollWheelZoom();
+            var opts = {
+                width: 400
+            }
+            var infoWindow = new BMap.InfoWindow(showmapInfo, opts);
+            marker.addEventListener("click", function () {
+                if (w_width>=641) {
+                    map.openInfoWindow(infoWindow,point);
+                }  
+            });
+        }
+
+        function changeMap (i) {
+            var $this = $('.map-nav li').eq(i);
+            $('.map-nav li').removeClass('act');
+            $this.addClass('act');
+            var point = $this.data('point'),
+                message = $this.data('message');
+            ShowMap(point, message, '17');
+        }
+
+        changeMap(0);
+
+        $('.map-nav li').bind(_click, function() {
+            var index = $(this).index();
+            changeMap(index);
+        })
+
+    })
+</script>
+</body>
+</html>

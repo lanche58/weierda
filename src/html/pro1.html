@@ -1,0 +1,106 @@
+@@include('./top.html')
+</head>
+
+<body>
+    @@include('./header.html',{ "pro": "act" }) @@include('./pbanner.html',{ "img": "pro_banner.jpg", "ch": "产品中心", "en": "Product Center" })
+    <div class="container">
+        <div class="pw pro-box page-pa">
+            <div class="proL">
+                @@include('./pronav.html',{
+                    "curr": "保温材料",
+                    "pro1": "act"
+                })
+            </div>
+            <!-- proL -->
+            <div class="proR">
+                <div class="pro-tx clearfix">
+                    <div class="pic"><img src="img/pro_i1.jpg" alt=""></div>
+                    <div class="txts">
+                        <h2 class="pro-ti ti fwb">无机改性不燃保温板(IPS)</h2>
+                        <div class="freeTx">
+                            <p>无机改性不燃保温板IPS是利用聚苯乙烯颗粒的保温性能及硅质材料的防火性能的协同效应，采用特殊工艺制成的具有A级防火功能的保温板。</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- pro-tx -->
+                <div class="pro-x">
+                    <div class="pro-sti">
+                        <p>产品特性<span class="en">/CONSTRUCTIONAL PARAMETER</span></p>
+                    </div>
+                    <div class="freeTx">
+                        <p><img src="img/pro_i10.jpg" alt=""></p>
+                    </div>
+                </div>
+                <!-- pro-x -->
+                <div class="pro-x">
+                    <div class="pro-sti">
+                        <p>技术指标<span class="en">/CONSTRUCTIONAL PARAMETER</span></p>
+                    </div>
+                    <div class="freeTx">
+                        <p><img src="img/pro_i11.jpg" alt=""></p>
+                        <br>
+                        <p><img src="img/pro_i6.jpg" alt=""></p>
+                    </div>
+                </div>
+                <!-- pro-x -->
+                <div class="pro-x">
+                    <div class="pro-sti">
+                        <p>应用领域<span class="en">/CONSTRUCTIONAL PARAMETER</span></p>
+                    </div>
+                    <div class="freeTx">
+                        <p class="adv">●保温装饰一体板</p>
+                        <p class="advx">无机改性不燃保温板(IPS)无装饰面板经过特殊工艺结合而成的保温装饰一体板。选择不同厚度的保温层，即可满足不同区域建筑节能的设计要求。</p>
+                        <p class="adv">●保温装饰一体板</p>
+                        <p class="advx">无机改性不燃保温板(IPS)无装饰面板经过特殊工艺结合而成的保温装饰一体板。选择不同厚度的保温层，即可满足不同区域建筑节能的设计要求。</p>
+                        <p class="adv">●保温装饰一体板</p>
+                        <p class="advx">无机改性不燃保温板(IPS)无装饰面板经过特殊工艺结合而成的保温装饰一体板。选择不同厚度的保温层，即可满足不同区域建筑节能的设计要求。</p>
+                        <p class="adv">●保温装饰一体板</p>
+                        <p class="advx">无机改性不燃保温板(IPS)无装饰面板经过特殊工艺结合而成的保温装饰一体板。选择不同厚度的保温层，即可满足不同区域建筑节能的设计要求。</p>
+                        <p class="adv">●保温装饰一体板</p>
+                        <p class="advx">无机改性不燃保温板(IPS)无装饰面板经过特殊工艺结合而成的保温装饰一体板。选择不同厚度的保温层，即可满足不同区域建筑节能的设计要求。</p>
+                    </div>
+                </div>
+                <!-- pro-x -->
+            </div>
+            <!-- proR -->
+        </div>
+    </div>
+    <!-- container -->
+    @@include('./footer.html')
+    <script src="js/page.js"></script>
+    <script>
+        $(function() {
+            $('.pro-nav').bind(_click, function(e) {
+                if (e.target.nodeName === 'A') {
+                    var $this = $(e.target),
+                        $next = $this.next();
+                    if (!$next.is('a')) {
+                        var $siblings = $this.parents('li').siblings(),
+                            _act = $this.hasClass('act');
+                        e.preventDefault();
+                        if (!_act) {
+                            $siblings.find('a').removeClass('act');
+                            $this.addClass('act');
+                            $siblings.find('.vt').stop(true, true).slideUp();
+                            $next.stop(true, true).slideDown();
+                        } else {
+                            $this.removeClass('act');
+                            $next.stop(true, true).slideUp();
+                        }
+                    }
+                }
+            });
+
+            $(window).scroll(function() {
+                if (isMobile) {
+                    return;
+                }
+                var st = $(window).scrollTop(),
+                    pt = $('.proL').offset().top - $('.header').height();
+                st > pt ? $('.pro-nav').addClass('fix') : $('.pro-nav').removeClass('fix');
+            });
+        })
+    </script>
+</body>
+
+</html>
