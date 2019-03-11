@@ -28,6 +28,60 @@
                         <p>产品特性<span class="en">/CONSTRUCTIONAL PARAMETER</span></p>
                     </div>
                     <div class="freeTx">
+                        <div class="charac-list clearfix">
+                            <!-- <span class="lin1 lin"></span> -->
+                            <!-- <span class="lin2 lin"></span> -->
+                            <!-- <span class="lin3 lin"></span> -->
+                            <!-- <span class="lin4 lin"></span> -->
+                            <div class="item">
+                                <p class="ti">A级<br>防火</p>
+                                <p class="text">同时实现了保温与防火有机结合，降低了导热系数，燃烧后只碳化无收缩滴落物，防火性能达到A级。是建筑节能保温新材料的一次技术革命。</p>
+                            </div>
+                            <div class="item">
+                                <p class="ti">轻质<br>高强</p>
+                                <p class="text">产品密度145kg/m³，
+                                        抗压强度≥0.15Mpa，
+                                        抗拉强度≥0.15Mpa，
+                                        提高了产品的拉伸粘
+                                        结强度，有效的减轻
+                                        了建筑的荷载，提高
+                                        了保温装饰系统的安
+                                        全性。</p>
+                            </div>
+                            <div class="item">
+                                <p class="ti">A级<br>防火</p>
+                                <p class="text">该产品有效的解决了
+                                        有机材料保温性好但
+                                        易燃烧和无机材料不
+                                        燃保温性差的矛盾，
+                                        是高效节能的保温材
+                                        料，适用于不同气候、
+                                        不同条件下的建筑保
+                                        温体系。</p>
+                            </div>
+                            <div class="item">
+                                <p class="ti">保温<br>隔热</p>
+                                <p class="text">取材绿色环保，无有
+                                        害物质挥发，不分解、
+                                        不霉变，产品燃烧时
+                                        无烟，且不产生有毒
+                                        及污染环境气体，产
+                                        品生产工艺过程低能
+                                        耗，无污染，可回收
+                                        再利用。</p>
+                            </div>
+                            <div class="item">
+                                <p class="ti">绿色<br>环保</p>
+                                <p class="text">体积吸水率≤4%，与
+                                        岩棉板相比，无机改
+                                        性不燃保温板(IPS)防
+                                        水性能更加优异，保
+                                        温效果持续，安全性
+                                        稳定，系统使用寿命
+                                        更长，有效的保障了
+                                        系统的安全性。</p>
+                            </div>
+                        </div>
                         <p><img src="img/pro_i10.jpg" alt=""></p>
                     </div>
                 </div>
@@ -98,6 +152,13 @@
                 var st = $(window).scrollTop(),
                     pt = $('.proL').offset().top - $('.header').height();
                 st > pt ? $('.pro-nav').addClass('fix') : $('.pro-nav').removeClass('fix');
+            });
+
+            $('.charac-list .item').each(function(i) {
+                var $parent = $(this).parent();
+                if (i < 5) {
+                    $parent.append('<span class="lin lin'+ (i + 1) + '"></span>');
+                }
             });
         })
     </script>

@@ -302,38 +302,43 @@
 
 .footer {
   background: #333;
-  padding: 25px 0 40px 0;
-  color: #fff;
+  padding: 25px 0;
+  color: #999;
   font-size: 12px;
   line-height: 24px; }
   .footer a {
-    color: #fff; }
+    color: #999; }
   .footer .f-ma {
     float: right; }
-  .footer .f-cop,
-  .footer .f-cont {
+  .footer .logo {
     float: left;
-    margin-top: 10px; }
+    width: 170px;
+    margin: 22px 25px 0 0; }
+  .footer .l {
+    border-left: 1px solid #999;
+    padding-left: 25px;
+    margin-top: 15px; }
 
 .f-ma > img {
   float: left;
-  width: 77px;
-  margin-right: 10px; }
+  width: 77px; }
 
 .f-ma p {
   overflow: hidden;
-  padding-top: 27px; }
+  padding-top: 27px;
+  margin-left: 10px; }
 
-.f-cont p {
-  float: left; }
-  .f-cont p + p {
-    margin-left: 40px; }
-
-.f-cont .icon {
-  display: inline-block;
-  vertical-align: bottom;
-  width: 25px;
-  font-size: 18px; }
+.f-cont {
+  overflow: hidden; }
+  .f-cont p {
+    float: left; }
+    .f-cont p + p {
+      margin-left: 40px; }
+  .f-cont .icon {
+    display: inline-block;
+    vertical-align: bottom;
+    width: 25px;
+    font-size: 18px; }
 
 @media screen and (min-width: 1025px) {
   .footer a:hover {
@@ -2107,3 +2112,71 @@
     margin-top: 20px; }
   .auxii-list .item1 {
     clear: both; }
+
+.process-list {
+  margin-left: -25px; }
+  .process-list li {
+    width: 33.33%;
+    float: left;
+    margin-bottom: 25px; }
+  .process-list .freeTx {
+    margin-left: 25px;
+    background: #ececec;
+    padding: 25px 20px 0 20px;
+    height: 100px;
+    font-size: 16px;
+    box-sizing: border-box; }
+  .process-list .sj {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -10px;
+    border-left-width: 10px;
+    border-right-width: 10px;
+    border-top-width: 16px;
+    color: #fff; }
+
+.charac-list {
+  border-left: 1px solid #ccc;
+  margin-bottom: 20px;
+  position: relative;
+  color: #999; }
+  .charac-list .item {
+    width: 20%;
+    float: left;
+    padding: 0 20px;
+    box-sizing: border-box; }
+    .charac-list .item:nth-child(2n) .ti {
+      background: #ececec;
+      color: #333; }
+  .charac-list .ti {
+    width: 130px;
+    height: 130px;
+    border-radius: 100%;
+    margin: 0 auto 12px auto;
+    padding-top: 35px;
+    background: #009f90;
+    text-align: center;
+    line-height: 1.25;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    box-sizing: border-box; }
+  .charac-list .lin {
+    position: absolute;
+    z-index: 9;
+    top: 0;
+    bottom: 0;
+    border-left: 1px solid #ccc;
+    display: block; }
+  .charac-list .lin1 {
+    left: 20%; }
+  .charac-list .lin2 {
+    left: 40%; }
+  .charac-list .lin3 {
+    left: 60%; }
+  .charac-list .lin4 {
+    left: 80%; }
+  .charac-list .lin5 {
+    left: 100%;
+    margin-left: -1px; }
