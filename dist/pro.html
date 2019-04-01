@@ -371,7 +371,7 @@
                 if (e.target.nodeName === 'A') {
                     var $this = $(e.target),
                         $next = $this.next();
-                    if (!$next.is('a')) {
+                    if ($next.is('div')) {
                         var $siblings = $this.parents('li').siblings(),
                             _act = $this.hasClass('act');
                         e.preventDefault();
